@@ -267,3 +267,34 @@ print(pierwsze_trzy_dni)
 
 
 
+def zamowienie_produktu(nazwa_produktu, *, cena, ilosc=1):
+    wartosc_zamowienia = cena * ilosc
+    tekst_podsumowanie = f"Produkt: {nazwa_produktu}, Cena: {cena}, Ilość: {ilosc}, Łączna cena: {wartosc_zamowienia}"
+    return tekst_podsumowanie, wartosc_zamowienia
+    pass
+
+# a. Stwórz pustą listę, do której wstawisz wartości zwracane przez funkcję dla 3 różnych produktów.
+lista_zamowien = []
+
+# b. Dodajmy trzy różne zamówienia
+produkt1 = zamowienie_produktu("Mleko", cena=2.50, ilosc=2)
+produkt2 = zamowienie_produktu("Chleb", cena=3.20, ilosc=1)
+produkt3 = zamowienie_produktu("Jajka", cena=1.50, ilosc=6)
+
+# Dodajemy zamówienia do listy
+lista_zamowien.extend([produkt1, produkt2, produkt3])
+
+# c. Przeiteruj po wypełnionej liście, wyświetl teksty.
+for zamowienie in lista_zamowien:
+    print(zamowienie[0])  # Wyświetl tekst podsumowania
+
+# d. Zmodyfikuj funkcję tak, żeby oprócz tekstu podsumowującego zwracała także wartość zamówienia.
+# Funkcja już zwraca wartość zamówienia jako drugi element krotki.
+
+# e. Na koniec wyświetl sumaryczną wartość zamówień (sumę z każdego zamówionego produktu).
+suma_zamowien = sum(zamowienie[1] for zamowienie in lista_zamowien)
+print("Sumaryczna wartość zamówień:", suma_zamowien)
+
+# f. Dodaj wartość domyślną dla argumentu ilosc równą 1.
+# W funkcji już dodano wartość domyślną dla argumentu ilosc.
+
