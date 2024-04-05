@@ -1,3 +1,7 @@
+import sys
+import os
+parent_path = os.path.dirname(sys.path[0])
+sys.path.append(parent_path)
 from zajecia02 import *
 
 # Kod z zadania 14
